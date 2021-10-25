@@ -1,0 +1,74 @@
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+*.zip
+
+# Windows shortcuts
+*.lnk
+
+# Text IDs
+/Text/_English/.TextEntries/*
+/Text/_Spanish/.TextEntries/*
+/Text/_French/.TextEntries/*
+/Text/_Portuguese/.TextEntries/*
+
+# gameboy stuff
+*.gba
+*.sav
+*.sgm
+*.ss0
+*.ss1
+*.ss2
+*.ss3
+*.ss4
+*.ss5
+*.ss6
+*.ss7
+*.ss8
+*.ss9
+*.ups
+
+#symbols logs from assembling
+*.sym
+*.symbols.log
+
+# =========================
+# Operating System Files
+# =========================
+
+# OSX
+# =========================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk

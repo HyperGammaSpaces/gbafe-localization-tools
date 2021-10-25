@@ -1,0 +1,134 @@
+//For setting which items use "A/An", "The", etc. Table runs from 0x3C to 0xB9
+#define ItemNameArticleTable $161B0
+	
+#define ItemName_NoArticle $163A8
+#define ItemName_UseArticle $163B0
+
+#define SetItemUsesArticle(itemID, setting) "PUSH; ORG ItemNameArticleTable+((itemID-0x3C)*4); POIN setting; POP"
+    
+/*
+    $1618C GetItemNameWithArticle - r0 is itemID, r1 = bool IsCapitalized
+    $A160 String_PrependArticle - r0 is start of string in text buffer, r1 = pointer to article (or 0 if need to call String_GetGenericArticle), r2 = bool IsCapitalized
+    $A048 String_GetGenericArticle - r0 is start of string in text buffer, r1 = bool IsCapitalized
+        For English: checks first letter of ASCII string, has a jump table for characters between `A` and `u`
+        $591AA4 gStringArticleLookup 0-terminated list of pointers to 0-terminated raw ASCII entries
+*/
+
+/*
+	//To remove articles entirely
+	PUSH
+		ORG 0x1619C
+		BYTE 0x04 0xE1
+	POP
+*/
+
+//The following allows you to define a lookup table for which article to use with each itemID.
+    PUSH
+        //Use per-item article table
+        ORG $163B6
+        SHORT $062D $000A $4902 $1840 $6806 $E00A $46C0
+        POIN ExpandedItemArticleTable
+        /*
+            lsl r5, r5, #0x18
+            lsl r0, r4, #0x2
+            ldr r1, ExpandedItemArticleTable
+            add r0, r0, r1
+            ldr r6, [r0]
+            b   $163D8
+        */
+        
+        //Make String_PrependArticle capitalize the article programmatically
+        ORG $A160
+        #include "String_PrependArticle_Capitalize.lyn.event"
+    POP
+    
+#define SetArticleForItem(itemID, textPointer) "PUSH; ORG ExpandedItemArticleTable+(itemID*4); POIN textPointer; POP" 
+   
+    ALIGN 4
+    ExpandedItemArticleTable:
+    FILL (256*4)
+    
+//Examples in Spanish:
+    Article_Un_ES:
+    String("un "); BYTE 0
+    Article_Una_ES:
+    String("una "); BYTE 0
+    Article_Unos_ES:
+    String("unos "); BYTE 0
+    Article_Unas_ES:
+    String("unas "); BYTE 0
+    Article_El_ES:
+    String("el "); BYTE 0
+    Article_La_ES:
+    String("la "); BYTE 0
+    Article_Los_ES:
+    String("los "); BYTE 0
+    Article_Las_ES:
+    String("las "); BYTE 0
+    
+    SetArticleForItem(IronSword, Article_Una_ES)
+    SetArticleForItem(SteelSword, Article_Una_ES)
+    SetArticleForItem(SilverSword, Article_Una_ES)
+    SetArticleForItem(BraveSword, Article_Una_ES)
+    SetArticleForItem(Runesword, Article_Una_ES)
+    SetArticleForItem(LightBrand, Article_Una_ES)
+    SetArticleForItem(PoisonSword, Article_Una_ES)
+    SetArticleForItem(Rapier, Article_Un_ES) //"Estoque" is masculine
+    SetArticleForItem(KillingEdge, Article_Una_ES)
+    SetArticleForItem(Armorslayer, Article_Una_ES)
+    SetArticleForItem(Lancereaver, Article_Una_ES)
+    SetArticleForItem(Zanbato, Article_Una_ES)
+    
+    SetArticleForItem(IronLance, Article_Una_ES)
+    SetArticleForItem(SteelLance, Article_Una_ES)
+    SetArticleForItem(SilverLance, Article_Una_ES)
+    SetArticleForItem(PoisonLance, Article_Una_ES)
+    SetArticleForItem(KillerLance, Article_Una_ES)
+    SetArticleForItem(Horseslayer, Article_Una_ES)
+    SetArticleForItem(Javelin, Article_Una_ES)
+    SetArticleForItem(Axereaver, Article_Una_ES)
+    SetArticleForItem(HeavySpear, Article_Una_ES)
+    
+    //note: "Hacha" and "Alabarda" use masculine articles, which threw a pretty big wrench in my plan to try and do this programmatically :P
+    SetArticleForItem(IronAxe, Article_Un_ES)
+    SetArticleForItem(SteelAxe, Article_Un_ES)
+    SetArticleForItem(SilverAxe, Article_Un_ES)
+    SetArticleForItem(PoisonAxe, Article_Un_ES)
+    SetArticleForItem(KillerAxe, Article_Un_ES)
+    SetArticleForItem(Halberd, Article_Un_ES)
+    SetArticleForItem(Hammer, Article_Un_ES)
+    SetArticleForItem(DevilAxe, Article_Un_ES)
+    SetArticleForItem(HandAxe, Article_Un_ES)
+    SetArticleForItem(Swordreaver, Article_Un_ES)
+    SetArticleForItem(Hatchet, Article_Un_ES)
+    
+    SetArticleForItem(IronBow, Article_Un_ES)
+    SetArticleForItem(SteelBow, Article_Un_ES)
+    SetArticleForItem(SilverBow, Article_Un_ES)
+    SetArticleForItem(KillerBow, Article_Un_ES)
+    SetArticleForItem(PoisonBow, Article_Un_ES)
+    SetArticleForItem(Longbow, Article_Un_ES)
+    
+    SetArticleForItem(Fire, Article_Un_ES)
+    SetArticleForItem(Thunder, Article_Un_ES)
+    
+    SetArticleForItem(Talisman, Article_Un_ES)
+    SetArticleForItem(Boots, Article_Unas_ES)
+    
+    SetArticleForItem(ChestKey, Article_Una_ES)
+    SetArticleForItem(DoorKey, Article_Una_ES)
+    SetArticleForItem(Lockpick, Article_Unas_ES)
+    SetArticleForItem(ChestKey_5, Article_Una_ES)
+    SetArticleForItem(Vulnerary, Article_Una_ES)
+    SetArticleForItem(Elixir, Article_Un_ES)
+    SetArticleForItem(PureWater, Article_Una_ES)
+    SetArticleForItem(Antitoxin, Article_Un_ES)
+    SetArticleForItem(TorchItem, Article_Una_ES)
+    SetArticleForItem(MemberCard, Article_Una_ES)
+    SetArticleForItem(SilverCard, Article_Una_ES)
+    SetArticleForItem(MetissTome, Article_El_ES)
+    
+//Unique weapons usually exclude the article in English; as an example we can set one for the sword Audhulma
+    SetItemUsesArticle(Audhulma, ItemName_UseArticle)
+    SetArticleForItem(Audhulma, Article_La_ES)
+    
