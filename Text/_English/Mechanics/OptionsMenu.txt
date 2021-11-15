@@ -1,0 +1,2 @@
+#0x90 Text_Options_Animation
+Animation[X]

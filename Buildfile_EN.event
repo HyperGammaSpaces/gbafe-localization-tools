@@ -1,0 +1,5 @@
+#define LANGUAGE_EN 0x1
+#define __LANGUAGE__ LANGUAGE_EN
+
+#include "CoreBuildfile.event"
+

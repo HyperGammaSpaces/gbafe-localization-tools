@@ -1,0 +1,4 @@
+#include "System.txt"
+#include "Mechanics/Mechanics.txt"
+#include "Classes/ClassNames.txt"
+#include "Items/ItemNames.txt"

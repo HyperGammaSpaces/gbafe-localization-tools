@@ -1,0 +1,12 @@
+#define Portrait_Eirika 0x02
+#define Portrait_Eirika_Closed 0x03
+#define Portrait_Seth 0x04
+
+#define Portrait_ONeill 0x30
+
+#define Portrait_Fado 0x51
+
+#define Portrait_Anna 0x64
+
+#define Portrait_Soldier_Blue 0x6A
+#define Portrait_Soldier_Red 0x6B

@@ -1,0 +1,179 @@
+#0x574 Text_PrepScreen_Units
+Unidades[X]
+
+#0x576 Text_PrepScreen_Items
+Objetos[X]
+
+## Text_PrepScreen_Support
+Apoyo[X]
+
+## Text_PrepScreen_ViewMap
+Ver mapa[X]
+
+## Text_PrepScreen_Save
+Guardar[X]
+
+## Text_PrepScreen_Units_Desc
+Elige un número limitado[NL]
+de unidades que partici-[NL]
+parán en la batalla.[X]
+
+#0x57C Text_PrepScreen_Items_Desc
+Administra los objetos de[NL]
+tus unidades.[X]
+
+#0x57F Text_PrepScreen_Support_Desc
+Comprueba la compatibi-[NL]
+lidad de tus unidades.[X]
+
+## Text_PrepScreen_ViewMap_Desc
+Estudia el mapa. Observa[NL]
+la posición de tus[NL]
+enemigos y cambia[NL]
+la de tus unidades.[X]
+
+## Text_PrepScreen_Save_Desc
+Guarda los cambios.[NL]
+Selecciona [0x93]recomenzar[NL]
+capítulo[0x94] si quieres.[NL]
+No podrás volver al mapa[NL]
+del mundo tras guardar.[X]
+
+#0x583 Text_PrepScreen_ChooseUnit
+Elegir unidad[X]
+
+#0x585 Text_PrepScreen_ConfirmItem
+¿Estás seguro?[X]
+
+#0x590 Text_PrepMap_View
+Ver mapa[X]
+
+## Text_PrepMap_Formation
+Formación[X]
+
+## Text_PrepMap_Option
+Opcion.[X]
+
+#0x594 Text_PrepItems_Trade
+Interc.[X]
+
+## Text_PrepItems_List
+Lista[X]
+
+## Text_PrepItems_Use
+Usar[X]
+
+## Text_PrepItems_Sell
+Vend.[X]
+
+## Text_PrepItems_Supply
+Carro[X]
+
+## Text_PrepItems_Armory
+Armerí.[X]
+
+## Text_PrepItems_GiveAll
+Da tod.[X]
+
+## Text_PrepItems_SellQuestion
+¿Vender?[X]
+
+## Text_PrepItems_SellAnswers
+Vender   Salir[X]
+
+## Text_PrepItems_Value
+Valor[X]
+
+## Text_PrepItems_Give
+Dar[X]
+
+## Text_PrepItems_Take
+Tomar[X]
+
+## Text_PrepItems_Stock
+Unids[X]
+
+## Text_PrepItems_Pick
+Elig.[X]
+
+## Text_PrepItems_UnitsLeft
+ más Total:[X]
+
+## Text_PrepItems_SellUnneeded
+Vende objs. innecesarios.[X]
+
+## Text_PrepItems_AreYouSure
+¿Estás seguro?[X]
+
+## Text_PrepItems_WhatDo
+¿Qué decides?[X]
+
+## Text_PrepItems_SupplyTake
+Me lo llevo.[X]
+
+## Text_PrepItems_SupplyGive
+Toma.[X]
+
+## Text_PrepItems_SupplyNone
+Nada[X]
+
+## Text_PrepItems_SupplyOwner
+Propie: [X]
+
+## Text_SupportMenu_Success
+Éxito[X]
+
+## Text_SupportMenu_Remaining
+Restantes[X]
+
+#0x5AD Text_Support_SelectCharacter
+Elegir unidad[X]
+
+#0x5AF Text_PrepItems_TradeDesc
+Intercambiar objetos[NL]
+de unidades.[X]
+
+## Text_PrepItems_UseDesc
+Usar objetos.[X]
+
+## Text_PrepItems_SupplyDesc
+Intercambiar objetos[NL]
+con el carro.[X]
+
+## Text_PrepItems_ArmoryDesc
+Comprar y vender objetos.[X]
+
+## Text_PrepItems_ListDesc
+Ver los objetos de todas[NL]
+las unidades.[X]
+
+## Text_PrepItems_SellDesc
+Vende objetos innecesarios.[NL]
+Algunos debes quedártelos.[X]
+
+## Text_PrepItems_GiveAllDesc
+Enviar todos los objetos[NL]
+al carro.[X]
+
+## Text_PrepItems_GiveDesc
+Almacenar objetos (hasta[NL]
+un máximo de 100).[X]
+
+## Text_PrepItems_TakeDesc
+Conseguir objeto. Cada[NL]
+unidad puede llevar hasta 5.[X]
+
+#0x5BB Text_PrepMap_View_Desc
+Ver mapas para batallas u[NL]
+objetos para compra y venta.[X]
+
+## Text_PrepMap_Formation_Desc
+Cambiar el orden de[NL]
+las unidades.[X]
+
+## Text_PrepMap_Option_Desc
+Velocidad y recuadro[NL]
+del juego.[X]
+
+## Text_PrepMap_Save_Desc
+Guardar la partida.[X]

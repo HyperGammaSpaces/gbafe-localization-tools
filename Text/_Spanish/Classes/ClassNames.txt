@@ -1,0 +1,30 @@
+#0x2BF Lord_ClassName
+Lord[X]
+
+## GreatLord_ClassName
+Great Lord
+[X]
+
+## Cav_ClassName
+Cavalier
+[X]
+
+## Paladin_ClassName
+Paladin
+[X]
+
+## Knight_ClassName
+Knight
+[X]
+
+## General_ClassName
+General
+[X]
+
+## Thief_ClassName
+Thief
+[X]
+
+## Merc_ClassName
+Mercenary
+[X]

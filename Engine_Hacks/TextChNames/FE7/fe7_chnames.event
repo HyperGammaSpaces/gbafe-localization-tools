@@ -1,0 +1,24 @@
+//include this under free space
+
+#include eastdlib.event
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+	ORG $82308
+	replaceWithHack(Chapter_Names_Hack)
+POP
+
+Chapter_Names_Hack:
+#include "fe7_international_chapter_names.lyn.event"
+ALIGN 4
+
+
+//original func is at 82308 in FE7U
+ALIGN 4
+Font_Graphic_Ptr:
+#incbin "font.png.dmp"	//HINT=BIN
+
+//Each chartable entry is 0x8 bytes
+ALIGN 4
+ChnameCharTablePtr:
+#incbin "chartable.dmp"	//HINT=BIN

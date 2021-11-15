@@ -1,0 +1,8 @@
+#include "Difficulty.txt"
+#include "GuideEntries.txt"
+#include "Statscreen.txt"
+#include "PrepScreen.txt"
+#include "PopupStrings.txt"
+#include "OptionsMenu.txt"
+#include "Terrain.txt"
+#include "UnitMenu.txt"

@@ -1,0 +1,64 @@
+#ifndef __LANGUAGE__
+	#define __LANGUAGE__ 0x1
+#endif
+
+#ifdef _FE8_
+
+    #include "EAstdlib.event"
+    #include "Definitions/_Master_Definition_Installer.event"
+
+    ORG FreeSpace
+	
+	//Text installer first for ID definitions
+	TextSpace:
+	#ifdef LANGUAGE_ES
+		MESSAGE "Installing Spanish text"
+		#include "Text/_Spanish/InstallTextData.event"
+	#else
+		#ifdef LANGUAGE_FR
+			MESSAGE "Installing French text"
+			#include "Text/_French/InstallTextData.event"
+		#else
+			MESSAGE "Installing English text"
+			#include "Text/_English/InstallTextData.event"
+		#endif
+	#endif
+	
+	MESSAGE Text space used is__ (currentOffset - TextSpace)
+	
+	//CSV tables
+	TableSpace:
+    #include "Tables/Table Installer.event"
+    MESSAGE Table space used is__ (currentOffset - TableSpace)
+	
+    //Engine Hacks
+	HaxSpace:
+    #include "Engine_Hacks/Master_Hack_Installer.event"
+    MESSAGE Hax space used is__ (currentOffset - HaxSpace)
+	
+	PUSH
+
+	ORG EndSpace
+
+	//GFX
+	GfxSpace:
+	#include "Graphics/Master_Graphics_Installer.event"
+	MESSAGE Gfx space used is__ (currentOffset - GfxSpace)
+
+	ALIGN 16 // ups correction
+    WORD 0 0 0 0
+
+	MESSAGE Total used space ends at currentOffset
+
+	POP
+	
+	//Events
+    #include "Events/Master_Events_Installer.event"
+	
+	//Maps
+    #include "Maps/Master Map Installer.event"
+    
+    MESSAGE Used free space ends at currentOffset
+#else
+    ERROR You are not assembling FE8 events!
+#endif

@@ -1,0 +1,15 @@
+#0x354 IronSword_Name
+Iron Sword
+[X]
+
+## SteelSword_Name
+Steel Sword
+[X]
+
+## SilverSword_Name
+Silver Sword
+[X]
+
+## BraveSword_Name
+Brave Sword
+[X]
